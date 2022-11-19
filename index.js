@@ -3,54 +3,46 @@ function getComputerChoice(arr) {
   const item = arr[randomIndex];
   return item;
 }
-let array = ["Rock", "Paper", "Scissors"];
-let result = getComputerChoice(array);
+
 let playerScore = 0;
 let computerScore = 0;
 
-//console.log(result);
+function playRound() {
+  console.log("INSIDE PLAY ROUND");
+  let arr = ["Rock", "Paper", "Scissors"];
 
-const userInput = prompt("Rock, Paper, Scissors");
-//console.log(userInput);
+  const userInput = prompt("Rock, Paper, Scissors");
+  const playerSelection = userInput.toLowerCase();
 
-const playerSelection = userInput.toLowerCase();
-const computerSelection = result.toLowerCase();
-//console.log(computerSelection);
-//console.log(playerSelection);
+  let computerSelection = getComputerChoice(arr);
+  computerSelection = computerSelection.toLowerCase();
 
-function playRound(playerSelection, computerSelection) {
-  
   if (playerSelection === computerSelection) {
     return "Draw";
   } else if (playerSelection === "paper") {
     if (computerSelection === "rock") {
-      ;playerScore++ 
+      playerScore++;
       return "You win";
-      
     } else if (computerSelection === "scissors") {
-      ;computerScore++ 
+      computerScore++;
       return "You lose";
-      
     } else return "Draw";
   } else if (playerSelection === "rock") {
     if (computerSelection === "scissors") {
-      ;playerScore++ 
+      playerScore++;
       return "You win";
-      
     } else if (computerSelection === "paper") {
-      ;computerScore++ 
+      computerScore++;
       return "You lose";
-      
     } else return "Draw";
-  } else (playerSelection === "scissors"); {
+  } else playerSelection === "scissors";
+  {
     if (computerSelection === "paper") {
-      ;playerScore++ 
+      playerScore++;
       return "You win";
-      
     } else if (computerSelection === "rock") {
-      ;computerScore++ 
+      computerScore++;
       return "You lose";
-      
     } else return "Draw";
   }
 }
@@ -61,21 +53,21 @@ function playRound(playerSelection, computerSelection) {
 let gameVerdict;
 
 function playGame() {
+  console.log("INSIDE PLAY GAME");
   for (let i = 0; i < 5; i++) {
-    if (playerScore <= 5) {
-      gameVerdict = "Player has won"
+    console.log(playRound());
+    console.log(playerScore);
+    if (playerScore == 5) {
+      gameVerdict = "Player has won";
+    } else if (computerScore == 5) {
+      gameVerdict = "Computer has won";
     } else {
-      gameVerdict = "Computer has won"
+      gameVerdict = "It's a draw";
     }
   }
   return gameVerdict;
 }
-console.log(playerScore);
 
 playGame();
-
-
-
-  
-  
-
+console.log(gameVerdict);
+console.log(playerScore);
