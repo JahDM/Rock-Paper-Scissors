@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    gap: 16px;
+}
+
+#rock {
+    width: 200px;
+    height: auto;
+}
+#paper {
+    width: 200px;
+    height: auto;
+}
+#scissors {
+    width: 200px;
+    height: auto;
+}

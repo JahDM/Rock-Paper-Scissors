@@ -50,9 +50,9 @@ function playRound() {
 //console.log(playRound(playerSelection, computerSelection));
 //console.log(playerScore);
 //console.log(computerScore);
-let gameVerdict;
+//let gameVerdict;
 
-function playGame() {
+/*function playGame() {
   console.log("INSIDE PLAY GAME");
   for (let i = 0; i < 5; i++) {
     console.log(playRound());
@@ -69,5 +69,6 @@ function playGame() {
 }
 
 playGame();
-console.log(gameVerdict);
+*/
+//console.log(gameVerdict);
 console.log(playerScore);
